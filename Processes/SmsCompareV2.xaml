@@ -15,7 +15,7 @@
     </InArgument>
   </this:SmsCompareV2.in_Kho>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1234,3081</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,3090.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -114,7 +114,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SmsCompareV2" sap:VirtualizedContainerService.HintSize="498,3016" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SmsCompareV2" sap:VirtualizedContainerService.HintSize="498.4,3025.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="newDt" />
       <Variable x:TypeArguments="scg:List(sd:DataTable)" Name="tables">
@@ -130,33 +130,33 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">DateTime.Now.ToString("hh:mm:ss") + ": Starting compare SMS..."</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="436,475" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="436,477.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,356" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,358.4" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="SoPhu" StartingCell="A1">
+            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="337.6,97.6" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="SoPhu" StartingCell="A1">
               <ui:ExcelWriteRange.DataTable>
                 <InArgument x:TypeArguments="sd:DataTable">
                   <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">in_SoPhu</CSharpValue>
                 </InArgument>
               </ui:ExcelWriteRange.DataTable>
             </ui:ExcelWriteRange>
-            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Kho" StartingCell="A1">
+            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="337.6,97.6" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Kho" StartingCell="A1">
               <ui:ExcelWriteRange.DataTable>
                 <InArgument x:TypeArguments="sd:DataTable">
                   <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116">in_Kho</CSharpValue>
@@ -172,19 +172,19 @@
         </InArgument>
       </ui:ExcelApplicationScope.WorkbookPath>
     </ui:ExcelApplicationScope>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="436,419" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="436,421.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,300" sap2010:WorkflowViewState.IdRef="Sequence_26">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,302.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="SoPhu">
+            <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="337.6,69.6" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="SoPhu">
               <ui:ExcelReadRange.DataTable>
                 <OutArgument x:TypeArguments="sd:DataTable">
                   <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">sophu</CSharpReference>
@@ -196,7 +196,7 @@
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Kho">
+            <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="337.6,69.6" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Kho">
               <ui:ExcelReadRange.DataTable>
                 <OutArgument x:TypeArguments="sd:DataTable">
                   <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">kho</CSharpReference>
@@ -217,7 +217,7 @@
         </InArgument>
       </ui:ExcelApplicationScope.WorkbookPath>
     </ui:ExcelApplicationScope>
-    <ui:JoinDataTables DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="436,69" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Full">
+    <ui:JoinDataTables DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="436,69.6" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Full">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -262,22 +262,22 @@
         </OutArgument>
       </ui:JoinDataTables.OutputDataTable>
     </ui:JoinDataTables>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="DateTime date1;&#xD;&#xA;DateTime date2;&#xD;&#xA;foreach (DataRow row in in_dt.Rows) {&#xD;&#xA;&#x9;if (!String.IsNullOrEmpty(row[&quot;ATM+&quot;].ToString()) &amp;&amp; !String.IsNullOrEmpty(row[&quot;AMT&quot;].ToString())) {&#xD;&#xA;&#x9;&#x9;date1 = DateTime.Parse(row[&quot;DateTime&quot;].ToString());&#xD;&#xA;&#x9;&#x9;date2 = DateTime.Parse(row[&quot;DATE&quot;].ToString());&#xD;&#xA;&#x9;&#x9;row[&quot;Compare sdt&quot;] = 0;//Convert.ToInt32(row[&quot;sdt&quot;]) - Convert.ToInt32(row[&quot;REQUEST&quot;]);&#xD;&#xA;&#x9;&#x9;row[&quot;Compare ATM&quot;] = 0;//Convert.ToInt32(row[&quot;AMT&quot;]) - Convert.ToInt32(row[&quot;ATM+&quot;]);&#xD;&#xA;&#x9;&#x9;if (Math.Abs(date2 - date1) &gt; 6000) in_dt.Rows.Remove(row);&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;if (String.IsNullOrEmpty(row[&quot;ATM+&quot;].ToString())) {&#xD;&#xA;&#x9;&#x9;row[&quot;Compare sdt&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;&#x9;row[&quot;Compare ATM&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;if (String.IsNullOrEmpty(row[&quot;AMT&quot;].ToString())) {&#xD;&#xA;&#x9;&#x9;row[&quot;Compare sdt&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;&#x9;row[&quot;Compare ATM&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436,174" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="DateTime date1;&#xD;&#xA;DateTime date2;&#xD;&#xA;TimeSpan time;&#xD;&#xA;foreach (DataRow row in in_dt.Rows) {&#xD;&#xA;&#x9;if (!String.IsNullOrEmpty(row[&quot;ATM+&quot;].ToString()) &amp;&amp; !String.IsNullOrEmpty(row[&quot;AMT&quot;].ToString())) {&#xD;&#xA;&#x9;&#x9;date1 = DateTime.Parse(row[&quot;DateTime&quot;].ToString());&#xD;&#xA;&#x9;&#x9;date2 = DateTime.Parse(row[&quot;DATE&quot;].ToString());&#xD;&#xA;&#x9;&#x9;time = date1 - date2;&#xD;&#xA;&#x9;&#x9;row[&quot;Compare sdt&quot;] = 0;&#xD;&#xA;&#x9;&#x9;row[&quot;Compare ATM&quot;] = 0;&#xD;&#xA;&#x9;&#x9;if (Math.Abs(time.TotalMilliseconds) &gt; 6000000) in_dt.Rows.Remove(row);&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;if (String.IsNullOrEmpty(row[&quot;ATM+&quot;].ToString())) {&#xD;&#xA;&#x9;&#x9;row[&quot;Compare sdt&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;&#x9;row[&quot;Compare ATM&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;if (String.IsNullOrEmpty(row[&quot;AMT&quot;].ToString())) {&#xD;&#xA;&#x9;&#x9;row[&quot;Compare sdt&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;&#x9;row[&quot;Compare ATM&quot;] = &quot;#N/A&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_9" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86">newDt</CSharpValue>
         </InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,384" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,385.6" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,296" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,297.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="tables = new List&lt;DataTable&gt;();&#xA;     int i = 0;&#xA;     int j = 1;&#xA;    DataTable newDt = in_dt.Clone();&#xA;   newDt.TableName = &quot;T&quot; + DateTime.Now.AddMonths(-1).Month + &quot;_&quot; + DateTime.Now.AddMonths(-1).Year +  &quot;_SMS_&quot; + j;&#xA;   newDt.Clear();&#xA;    foreach (DataRow row in in_dt.Rows)&#xA;    {&#xA;         DataRow newRow = newDt.NewRow();&#xA;         newRow.ItemArray = row.ItemArray;&#xA;         newDt.Rows.Add(newRow);&#xA;         i++;&#xA;         if (i == batchSize)&#xA;        {&#xA;           tables.Add(newDt);&#xA;           j++;&#xA;          newDt = in_dt.Clone();&#xA;          newDt.TableName = &quot;T&quot; + DateTime.Now.AddMonths(-1).Month + &quot;_&quot; + DateTime.Now.AddMonths(-1).Year +  &quot;_SMS_&quot; + j;&#xA;          newDt.Clear();&#xA;          i = 0;&#xA;  }&#xA;&#x9;&#x9; }&#xA;&#x9;&#x9;if(i != 0){&#xA;&#x9;&#x9;tables.Add(newDt);&#xA;&#x9;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_7" Language="CSharp">
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="tables = new List&lt;DataTable&gt;();&#xA;     int i = 0;&#xA;     int j = 1;&#xA;    DataTable newDt = in_dt.Clone();&#xA;   newDt.TableName = &quot;T&quot; + DateTime.Now.AddMonths(-1).Month + &quot;_&quot; + DateTime.Now.AddMonths(-1).Year +  &quot;_SMS_&quot; + j;&#xA;   newDt.Clear();&#xA;    foreach (DataRow row in in_dt.Rows)&#xA;    {&#xA;         DataRow newRow = newDt.NewRow();&#xA;         newRow.ItemArray = row.ItemArray;&#xA;         newDt.Rows.Add(newRow);&#xA;         i++;&#xA;         if (i == batchSize)&#xA;        {&#xA;           tables.Add(newDt);&#xA;           j++;&#xA;          newDt = in_dt.Clone();&#xA;          newDt.TableName = &quot;T&quot; + DateTime.Now.AddMonths(-1).Month + &quot;_&quot; + DateTime.Now.AddMonths(-1).Year +  &quot;_SMS_&quot; + j;&#xA;          newDt.Clear();&#xA;          i = 0;&#xA;  }&#xA;&#x9;&#x9; }&#xA;&#x9;&#x9;if(i != 0){&#xA;&#x9;&#x9;tables.Add(newDt);&#xA;&#x9;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="337.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_7" Language="CSharp">
             <ui:InvokeCode.Arguments>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt">
                 <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">newDt</CSharpValue>
