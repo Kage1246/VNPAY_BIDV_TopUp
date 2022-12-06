@@ -3,10 +3,10 @@
     <x:Property Name="in_sophuPath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1170,3000</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1282,3266</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="40">
+    <scg:List x:TypeArguments="x:String" Capacity="80">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -47,10 +47,12 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="59">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="118">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -112,7 +114,7 @@
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_OutlookSoPhu_Process" sap:VirtualizedContainerService.HintSize="630,2935" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_OutlookSoPhu_Process" sap:VirtualizedContainerService.HintSize="700,3201" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
       <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="attach" />
@@ -126,14 +128,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="588,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"Get mail sophu starting..."</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="lehth@vnpay.vn" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="588,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="1000">
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="lehth@vnpay.vn" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="638,32" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="1000">
       <ui:GetOutlookMailMessages.Filter>
         <InArgument x:TypeArguments="x:String">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"[SenderEmailAddress] = 'gdkhdn.hoankiem@gmail.com' AND [ReceivedTime] &gt;= '01/" + DateTime.Today.ToString("MM/yyyy") + " 00:00AM'"</CSharpValue>
@@ -145,7 +147,7 @@
         </OutArgument>
       </ui:GetOutlookMailMessages.Messages>
     </ui:GetOutlookMailMessages>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xD;&#xA;int pos1 = 0;&#xD;&#xA;int pos2 = 0;&#xD;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xD;&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xD;&#xA;    if (body[i] == '&gt;') {&#xD;&#xA;        pos2 = i;&#xD;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xD;&#xA;    }&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="588,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xA;int pos1 = 0;&#xA;int pos2 = 0;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xA;    if (body[i] == '&gt;') {&#xA;        pos2 = i;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xA;    }&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="638,61" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="body">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">messages[0].Body</CSharpValue>
@@ -154,55 +156,61 @@
           <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">links</CSharpReference>
         </OutArgument>
       </ui:InvokeCode.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeCode>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="588,2446" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="638,2765" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="link" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,2322" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="602,2631" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="540,101" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">link</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="510,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
+            <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="540,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
               <ui:GetEnvironmentFolder.FolderPath>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">userProfile</CSharpReference>
                 </OutArgument>
               </ui:GetEnvironmentFolder.FolderPath>
             </ui:GetEnvironmentFolder>
-            <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="510,1269" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
+            <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="540,1409" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1014" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1144" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="434,466" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V2" WindowResize="Maximize">
+                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="444,516" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V2" WindowResize="Maximize">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Download file" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <Sequence DisplayName="Download file" sap:VirtualizedContainerService.HintSize="400,290" sap2010:WorkflowViewState.IdRef="Sequence_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ClickType="Single" DelayBefore="2" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V3">
+                            <uix:NClick ClickType="Single" DelayBefore="2" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://drive.google.com/file/d/1BmQUG0rTMyOyCUf5zp0tMFlAINawc6aj/view" DesignTimeRectangle="1714, 89, 40, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-label='Tải xuống' aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Tải xuống' aria-role='button' tag='DIV' type='' class='ndfHFb-c4YZDc-to915-LgbsSe ndfHFb-c4YZDc-C7uZwb-LgbsSe VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe ndfHFb-c4YZDc-C7uZwb-LgbsSe-SfQLQb-Bz112c' aaname='' /&gt;" Guid="1e192d35-12a0-4075-87ef-6335e59286f6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADSSURBVFhH7ZWBCYMwFEQ7U3bKHNnJ7OQCGcBy0l+0fIsm/yjSO3gQPZI8IZJHSmm5ExJmI2E2EmYjYTYSZiNhNhIGFq8bRcLA4nWjSBhYvG6UMOGc83ts8bpRQoRrratgKWV9tmCMd8g0Tbs5vYQImxRyNMZHeXOvEnYktnKfiZIFoT+dJx0pC0KFAeMYbOkWtngdpI9kLV53BorwNyxed4b/EW6tvba+nnme3TXP0C2M2wsbXw3mjNx83cK/QsJsJMxGwmwkzEbCbCTM5mbCaXkCsOfCKSMuGS8AAAAASUVORK5CYII=" InformativeScreenshot="7823f0fe5fb921499ce58f81e96cf5d5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='12410000228424.xlsx - Google Drive' /&gt;" SearchSteps="Selector, Image" Version="V1" Visibility="Interactive" />
                               </uix:NClick.Target>
@@ -226,20 +234,20 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NApplicationCard>
-                    <uix:NCheckState DisplayName="Check App State 'Vẫn tải xuống'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="434,416" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Vẫn tải xuống'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="444,466" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30" Version="V3">
                       <uix:NCheckState.Exists>
                         <OutArgument x:TypeArguments="x:Boolean">
                           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">targetAppears</CSharpReference>
                         </OutArgument>
                       </uix:NCheckState.Exists>
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,200" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,240" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'INPUT  uc-download-link'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'INPUT  uc-download-link'" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -302,14 +310,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetLastDownloadedFile>
-            <If sap:VirtualizedContainerService.HintSize="496,319" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap:VirtualizedContainerService.HintSize="540,418" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">targetAppears</CSharpValue>
                 </InArgument>
               </If.Condition>
               <If.Then>
-                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="w" KeyModifiers="Ctrl">
+                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="w" KeyModifiers="Ctrl">
                   <ui:SendHotkey.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9087da7c-41d3-4f1f-b725-9120a221a942">
                       <ui:Target.TimeoutMS>
@@ -323,7 +331,7 @@
                 </ui:SendHotkey>
               </If.Then>
               <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -332,7 +340,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="496,132" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="w" KeyModifiers="Ctrl">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="540,142" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="w" KeyModifiers="Ctrl">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9087da7c-41d3-4f1f-b725-9120a221a942">
                   <ui:Target.TimeoutMS>
@@ -344,7 +352,7 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="496,158" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True">
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="540,168" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True">
               <ui:MoveFile.Destination>
                 <InArgument x:TypeArguments="x:String">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">in_sophuPath</CSharpValue>
