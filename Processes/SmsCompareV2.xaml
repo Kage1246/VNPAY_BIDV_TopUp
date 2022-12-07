@@ -15,7 +15,7 @@
     </InArgument>
   </this:SmsCompareV2.in_Kho>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1020,2127</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,3242</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -117,7 +117,7 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SmsCompareV2" sap:VirtualizedContainerService.HintSize="496,2062" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SmsCompareV2" sap:VirtualizedContainerService.HintSize="496,3177" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="newDt" />
       <Variable x:TypeArguments="scg:List(sd:DataTable)" Name="tables">
@@ -133,6 +133,7 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
@@ -142,113 +143,120 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,475" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,356" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="SoPhu" StartingCell="A1">
+              <ui:ExcelWriteRange.DataTable>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">in_SoPhu</CSharpValue>
+                </InArgument>
+              </ui:ExcelWriteRange.DataTable>
+            </ui:ExcelWriteRange>
+            <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Kho" StartingCell="A1">
+              <ui:ExcelWriteRange.DataTable>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116">in_Kho</CSharpValue>
+                </InArgument>
+              </ui:ExcelWriteRange.DataTable>
+            </ui:ExcelWriteRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ExcelApplicationScope.WorkbookPath>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_121" xml:space="preserve">in_Folder + "\\T" + DateTime.Now.AddMonths(-1).Month + "_" + DateTime.Now.AddMonths(-1).Year +  "_SMS"</CSharpValue>
+        </InArgument>
+      </ui:ExcelApplicationScope.WorkbookPath>
+    </ui:ExcelApplicationScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,101" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_182">"Write succeed."</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,419" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,300" sap2010:WorkflowViewState.IdRef="Sequence_26">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="SoPhu">
+              <ui:ExcelReadRange.DataTable>
+                <OutArgument x:TypeArguments="sd:DataTable">
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">sophu</CSharpReference>
+                </OutArgument>
+              </ui:ExcelReadRange.DataTable>
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+            <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Kho">
+              <ui:ExcelReadRange.DataTable>
+                <OutArgument x:TypeArguments="sd:DataTable">
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">kho</CSharpReference>
+                </OutArgument>
+              </ui:ExcelReadRange.DataTable>
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ExcelApplicationScope.WorkbookPath>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_122" xml:space="preserve">in_Folder + "\\T" + DateTime.Now.AddMonths(-1).Month + "_" + DateTime.Now.AddMonths(-1).Year +  "_SMS"</CSharpValue>
+        </InArgument>
+      </ui:ExcelApplicationScope.WorkbookPath>
+    </ui:ExcelApplicationScope>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="CommentOut_11">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="462,818" sap2010:WorkflowViewState.IdRef="Sequence_50">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="462,616" sap2010:WorkflowViewState.IdRef="Sequence_50">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="400,696" sap2010:WorkflowViewState.IdRef="Sequence_49">
+          <Sequence sap:VirtualizedContainerService.HintSize="400,494" sap2010:WorkflowViewState.IdRef="Sequence_49">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000">
-              <ui:ExcelApplicationScope.Body>
-                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,356" sap2010:WorkflowViewState.IdRef="Sequence_28">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="SoPhu" StartingCell="A1">
-                      <ui:ExcelWriteRange.DataTable>
-                        <InArgument x:TypeArguments="sd:DataTable">
-                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">in_SoPhu</CSharpValue>
-                        </InArgument>
-                      </ui:ExcelWriteRange.DataTable>
-                    </ui:ExcelWriteRange>
-                    <ui:ExcelWriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Kho" StartingCell="A1">
-                      <ui:ExcelWriteRange.DataTable>
-                        <InArgument x:TypeArguments="sd:DataTable">
-                          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116">in_Kho</CSharpValue>
-                        </InArgument>
-                      </ui:ExcelWriteRange.DataTable>
-                    </ui:ExcelWriteRange>
-                  </Sequence>
-                </ActivityAction>
-              </ui:ExcelApplicationScope.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelApplicationScope.WorkbookPath>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_121" xml:space="preserve">in_Folder + "\\T" + DateTime.Now.AddMonths(-1).Month + "_" + DateTime.Now.AddMonths(-1).Year +  "_SMS"</CSharpValue>
-                </InArgument>
-              </ui:ExcelApplicationScope.WorkbookPath>
-            </ui:ExcelApplicationScope>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000">
-              <ui:ExcelApplicationScope.Body>
-                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,300" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="SoPhu">
-                      <ui:ExcelReadRange.DataTable>
-                        <OutArgument x:TypeArguments="sd:DataTable">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">sophu</CSharpReference>
-                        </OutArgument>
-                      </ui:ExcelReadRange.DataTable>
-                      <ui:ExcelReadRange.Range>
-                        <InArgument x:TypeArguments="x:String">
-                          <Literal x:TypeArguments="x:String" Value="" />
-                        </InArgument>
-                      </ui:ExcelReadRange.Range>
-                    </ui:ExcelReadRange>
-                    <ui:ExcelReadRange AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Kho">
-                      <ui:ExcelReadRange.DataTable>
-                        <OutArgument x:TypeArguments="sd:DataTable">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">kho</CSharpReference>
-                        </OutArgument>
-                      </ui:ExcelReadRange.DataTable>
-                      <ui:ExcelReadRange.Range>
-                        <InArgument x:TypeArguments="x:String">
-                          <Literal x:TypeArguments="x:String" Value="" />
-                        </InArgument>
-                      </ui:ExcelReadRange.Range>
-                    </ui:ExcelReadRange>
-                  </Sequence>
-                </ActivityAction>
-              </ui:ExcelApplicationScope.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelApplicationScope.WorkbookPath>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_122" xml:space="preserve">in_Folder + "\\T" + DateTime.Now.AddMonths(-1).Month + "_" + DateTime.Now.AddMonths(-1).Year +  "_SMS"</CSharpValue>
-                </InArgument>
-              </ui:ExcelApplicationScope.WorkbookPath>
-            </ui:ExcelApplicationScope>
             <ui:JoinDataTables DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="338,69" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Full">
               <ui:JoinDataTables.Arguments>
                 <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
@@ -410,7 +418,7 @@
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:InvokeCode ContinueOnError="{x:Null}" Code="int curRow = 0;&#xD;&#xA;int lastRow = io_dt.Rows.Count - 1;&#xD;&#xA;while (curRow &lt;= lastRow) {&#xD;&#xA;&#x9;for (int i = curRow; i &lt;= lastRow; i++) {&#xD;&#xA;&#x9;&#x9;DataRow row = io_dt.Rows[i];&#xD;&#xA;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;if (i &lt;= lastRow - 3 &amp;&amp;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(Int32.Parse(row[&quot;sdt&quot;].ToString()) != Int32.Parse(row[&quot;REQUEST&quot;].ToString()) ||&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;Int32.Parse(row[&quot;AMT&quot;].ToString()) != Int32.Parse(row[&quot;ATM+&quot;].ToString())) ) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if ( !(Int32.Parse(io_dt.Rows[i + 1][&quot;sdt&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 1][&quot;REQUEST&quot;].ToString()) &amp;&amp;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 1][&quot;AMT&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 1][&quot;ATM+&quot;].ToString()) ||&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 2][&quot;sdt&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 2][&quot;REQUEST&quot;].ToString()) &amp;&amp;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 2][&quot;AMT&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 2][&quot;ATM+&quot;].ToString()) ||&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 3][&quot;sdt&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 3][&quot;REQUEST&quot;].ToString()) &amp;&amp;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 3][&quot;AMT&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 3][&quot;ATM+&quot;].ToString()) ) ) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Current row = &quot; + i);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = i + 1; j &lt; io_dt.Rows.Count - 1; i++) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;TELCO&quot;] = io_dt.Rows[j - 1][&quot;TELCO&quot;];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;ATM+&quot;] = io_dt.Rows[j - 1][&quot;ATM+&quot;];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;TRACE-&quot;] = io_dt.Rows[j - 1][&quot;TRACE-&quot;];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;DATE&quot;] = io_dt.Rows[j - 1][&quot;DATE&quot;];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;REQUEST&quot;] = io_dt.Rows[j - 1][&quot;REQUEST&quot;];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;BENNE&quot;] = io_dt.Rows[j - 1][&quot;BENNE&quot;];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;MERCHANT&quot;] = io_dt.Rows[j - 1][&quot;MERCHANT&quot;];&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;TELCO&quot;] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;ATM+&quot;] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;TRACE-&quot;] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;DATE&quot;] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;REQUEST&quot;] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;BENNE&quot;] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;MERCHANT&quot;] = null;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;curRow = i + 1;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;lastRow ++;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;} catch (System.Exception e) {&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_11" Language="CSharp">
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="int curRow = 0;&#xA;int lastRow = io_dt.Rows.Count - 1;&#xA;while (curRow &lt;= lastRow) {&#xA;&#x9;for (int i = curRow; i &lt;= lastRow; i++) {&#xA;&#x9;&#x9;DataRow row = io_dt.Rows[i];&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;if (i &lt;= lastRow - 3 &amp;&amp;&#xA;&#x9;&#x9;&#x9;&#x9;(Int32.Parse(row[&quot;sdt&quot;].ToString()) != Int32.Parse(row[&quot;REQUEST&quot;].ToString()) ||&#xA;&#x9;&#x9;&#x9;&#x9;Int32.Parse(row[&quot;AMT&quot;].ToString()) != Int32.Parse(row[&quot;ATM+&quot;].ToString())) ) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if ( !(Int32.Parse(io_dt.Rows[i + 1][&quot;sdt&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 1][&quot;REQUEST&quot;].ToString()) &amp;&amp;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 1][&quot;AMT&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 1][&quot;ATM+&quot;].ToString()) ||&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 2][&quot;sdt&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 2][&quot;REQUEST&quot;].ToString()) &amp;&amp;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 2][&quot;AMT&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 2][&quot;ATM+&quot;].ToString()) ||&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 3][&quot;sdt&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 3][&quot;REQUEST&quot;].ToString()) &amp;&amp;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Int32.Parse(io_dt.Rows[i + 3][&quot;AMT&quot;].ToString()) == Int32.Parse(io_dt.Rows[i + 3][&quot;ATM+&quot;].ToString()) ) ) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Current row = &quot; + i);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;for (int j = i + 1; j &lt; io_dt.Rows.Count - 1; i++) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;TELCO&quot;] = io_dt.Rows[j - 1][&quot;TELCO&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;ATM+&quot;] = io_dt.Rows[j - 1][&quot;ATM+&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;TRACE-&quot;] = io_dt.Rows[j - 1][&quot;TRACE-&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;DATE&quot;] = io_dt.Rows[j - 1][&quot;DATE&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;REQUEST&quot;] = io_dt.Rows[j - 1][&quot;REQUEST&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;BENNE&quot;] = io_dt.Rows[j - 1][&quot;BENNE&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[j][&quot;MERCHANT&quot;] = io_dt.Rows[j - 1][&quot;MERCHANT&quot;];&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;TELCO&quot;] = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;ATM+&quot;] = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;TRACE-&quot;] = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;DATE&quot;] = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;REQUEST&quot;] = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;BENNE&quot;] = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;io_dt.Rows[i][&quot;MERCHANT&quot;] = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;curRow = i + 1;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;lastRow ++;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} catch (System.Exception e) {&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_11" Language="CSharp">
               <ui:InvokeCode.Arguments>
                 <InArgument x:TypeArguments="sd:DataTable" x:Key="io_dt">
                   <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_180">finalTable</CSharpValue>

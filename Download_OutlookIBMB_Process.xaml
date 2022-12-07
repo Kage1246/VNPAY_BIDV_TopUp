@@ -5,7 +5,7 @@
     <x:Property Name="in_MaThePath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1020,2715</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,4063</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -117,7 +117,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_OutlookIBMB_Process" sap:VirtualizedContainerService.HintSize="740,2650" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_OutlookIBMB_Process" sap:VirtualizedContainerService.HintSize="942,3998" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="links" />
@@ -128,14 +128,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="678,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="880,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"Get mail IBMB starting..."</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="678,32" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="50">
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="880,32" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="50">
       <ui:GetOutlookMailMessages.Account>
         <InArgument x:TypeArguments="x:String">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_Config["mail"].ToString()</CSharpValue>
@@ -148,7 +148,7 @@
       </ui:GetOutlookMailMessages.Filter>
       <ui:GetOutlookMailMessages.MailFolder>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">in_Config["folder"].ToString()</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">in_Config["folder_IBMB"].ToString()</CSharpValue>
         </InArgument>
       </ui:GetOutlookMailMessages.MailFolder>
       <ui:GetOutlookMailMessages.Messages>
@@ -157,26 +157,26 @@
         </OutArgument>
       </ui:GetOutlookMailMessages.Messages>
     </ui:GetOutlookMailMessages>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="678,2174" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="880,3522" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="642,2040" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="844,3388" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="580,101" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="782,101" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">mail.Subject</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <If sap:VirtualizedContainerService.HintSize="580,1777" sap2010:WorkflowViewState.IdRef="If_4">
+            <If sap:VirtualizedContainerService.HintSize="782,3125" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">mail.Attachments.Any()</CSharpValue>
@@ -210,13 +210,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="498,1395" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence sap:VirtualizedContainerService.HintSize="700,2743" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xA;int pos1 = 0;&#xA;int pos2 = 0;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xA;    if (body[i] == '&gt;') {&#xA;        pos2 = i;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xA;    }&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xA;int pos1 = 0;&#xA;int pos2 = 0;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xA;    if (body[i] == '&gt;') {&#xA;        pos2 = i;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xA;    }&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="638,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
                     <ui:InvokeCode.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="body">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">mail.Body</CSharpValue>
@@ -232,13 +232,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeCode>
-                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,1059" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
+                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="638,2407" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:String">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:String" Name="link" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,926" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="602,2274" sap2010:WorkflowViewState.IdRef="Sequence_10">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="userProfile" />
                             <Variable x:TypeArguments="si:FileInfo" Name="downloadedFile" />
@@ -248,21 +248,21 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="540,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
                             <ui:LogMessage.Message>
                               <InArgument x:TypeArguments="x:Object">
                                 <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">link</CSharpValue>
                               </InArgument>
                             </ui:LogMessage.Message>
                           </ui:LogMessage>
-                          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="338,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
+                          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="540,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
                             <ui:GetEnvironmentFolder.FolderPath>
                               <OutArgument x:TypeArguments="x:String">
                                 <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">userProfile</CSharpReference>
                               </OutArgument>
                             </ui:GetEnvironmentFolder.FolderPath>
                           </ui:GetEnvironmentFolder>
-                          <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
+                          <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="540,1409" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
                             <ui:GetLastDownloadedFile.Body>
                               <ActivityAction>
                                 <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1144" sap2010:WorkflowViewState.IdRef="Sequence_8">
@@ -285,7 +285,7 @@
                                           </sap:WorkflowViewStateService.ViewState>
                                           <uix:NClick ClickType="Single" DelayBefore="2" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V3">
                                             <uix:NClick.Target>
-                                              <uix:TargetAnchorable BrowserURL="https://drive.google.com/file/d/1BmQUG0rTMyOyCUf5zp0tMFlAINawc6aj/view" DesignTimeRectangle="1714, 89, 40, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-label='Tải xuống' aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Tải xuống' aria-role='button' tag='DIV' type='' class='ndfHFb-c4YZDc-to915-LgbsSe ndfHFb-c4YZDc-C7uZwb-LgbsSe VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe ndfHFb-c4YZDc-C7uZwb-LgbsSe-SfQLQb-Bz112c' aaname='' /&gt;" Guid="1e192d35-12a0-4075-87ef-6335e59286f6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADSSURBVFhH7ZWBCYMwFEQ7U3bKHNnJ7OQCGcBy0l+0fIsm/yjSO3gQPZI8IZJHSmm5ExJmI2E2EmYjYTYSZiNhNhIGFq8bRcLA4nWjSBhYvG6UMOGc83ts8bpRQoRrratgKWV9tmCMd8g0Tbs5vYQImxRyNMZHeXOvEnYktnKfiZIFoT+dJx0pC0KFAeMYbOkWtngdpI9kLV53BorwNyxed4b/EW6tvba+nnme3TXP0C2M2wsbXw3mjNx83cK/QsJsJMxGwmwkzEbCbCTM5mbCaXkCsOfCKSMuGS8AAAAASUVORK5CYII=" InformativeScreenshot="7823f0fe5fb921499ce58f81e96cf5d5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='12410000228424.xlsx - Google Drive' /&gt;" SearchSteps="Selector, Image" Version="V1" Visibility="Interactive" />
+                                              <uix:TargetAnchorable BrowserURL="https://drive.google.com/file/d/1BmQUG0rTMyOyCUf5zp0tMFlAINawc6aj/view" DesignTimeRectangle="1714, 89, 40, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Tải xuống' aria-role='button' tag='DIV' type='' class='ndfHFb-c4YZDc-to915-LgbsSe ndfHFb-c4YZDc-C7uZwb-LgbsSe VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe ndfHFb-c4YZDc-C7uZwb-LgbsSe-SfQLQb-Bz112c' aaname='' /&gt;" Guid="1e192d35-12a0-4075-87ef-6335e59286f6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADSSURBVFhH7ZWBCYMwFEQ7U3bKHNnJ7OQCGcBy0l+0fIsm/yjSO3gQPZI8IZJHSmm5ExJmI2E2EmYjYTYSZiNhNhIGFq8bRcLA4nWjSBhYvG6UMOGc83ts8bpRQoRrratgKWV9tmCMd8g0Tbs5vYQImxRyNMZHeXOvEnYktnKfiZIFoT+dJx0pC0KFAeMYbOkWtngdpI9kLV53BorwNyxed4b/EW6tvba+nnme3TXP0C2M2wsbXw3mjNx83cK/QsJsJMxGwmwkzEbCbCTM5mbCaXkCsOfCKSMuGS8AAAAASUVORK5CYII=" InformativeScreenshot="7823f0fe5fb921499ce58f81e96cf5d5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='12410000228424.xlsx - Google Drive' /&gt;" SearchSteps="Selector, Image" Version="V1" Visibility="Interactive" />
                                             </uix:NClick.Target>
                                           </uix:NClick>
                                         </Sequence>
@@ -378,12 +378,12 @@
                             </ui:GetLastDownloadedFile.File>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:GetLastDownloadedFile>
-                          <If sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If sap:VirtualizedContainerService.HintSize="540,61" sap2010:WorkflowViewState.IdRef="If_2">
                             <If.Condition>
                               <InArgument x:TypeArguments="x:Boolean">
                                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">targetAppears</CSharpValue>
@@ -419,7 +419,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="338,142" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="w" KeyModifiers="Ctrl">
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="540,142" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="w" KeyModifiers="Ctrl">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9087da7c-41d3-4f1f-b725-9120a221a942">
                                 <ui:Target.TimeoutMS>
