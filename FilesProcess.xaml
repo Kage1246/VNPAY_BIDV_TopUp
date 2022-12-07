@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FilesProcess" this:FilesProcess.FolderIBMB="D:\\Files\\IBMB" this:FilesProcess.FolderWeb="D:\\Files\\WebFiles" this:FilesProcess.FolderSoPhu="D:\\Files\\SoPhu" this:FilesProcess.FolderFinalSMS="D:\\Files\\FinalSMS" this:FilesProcess.FolderFinalIBMB="D:\\Files\\FinalIBMB" this:FilesProcess.FolderMaThe="D:\\Files\\FinalMaThe" this:FilesProcess.FileMaThe="D:\\Files\\MaThe\\2022.10. Ma the (1).xlsx" this:FilesProcess.SheetMaThe="rpt_FileBillreconcile(75)" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FilesProcess" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FolderIBMB" Type="InArgument(x:String)" />
     <x:Property Name="FolderWeb" Type="InArgument(x:String)" />
@@ -10,7 +10,7 @@
     <x:Property Name="SheetMaThe" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1282,1119</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1022,1119</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">

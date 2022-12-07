@@ -1,9 +1,10 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Download_Outlook_Process" this:Download_Outlook_Process.in_sophuPath="D:\\RPA\\TopUp_BIDV\\10_2022\\SoPhu" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_sophuPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1282,3266</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1020,1991</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="80">
@@ -52,7 +53,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="118">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="61">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -112,9 +113,10 @@
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_OutlookSoPhu_Process" sap:VirtualizedContainerService.HintSize="700,3201" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_OutlookSoPhu_Process" sap:VirtualizedContainerService.HintSize="642,1926" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
       <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="attach" />
@@ -128,26 +130,42 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="580,61" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"Get mail sophu starting..."</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="lehth@vnpay.vn" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="638,32" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="1000">
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="580,32" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="50">
+      <ui:GetOutlookMailMessages.Account>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">in_Config["mail"].ToString()</CSharpValue>
+        </InArgument>
+      </ui:GetOutlookMailMessages.Account>
       <ui:GetOutlookMailMessages.Filter>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"[SenderEmailAddress] = 'gdkhdn.hoankiem@gmail.com' AND [ReceivedTime] &gt;= '01/" + DateTime.Today.ToString("MM/yyyy") + " 00:00AM'"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">"[SenderEmailAddress] = '"+in_Config["mailSP"].ToString()+"'" + "AND [ReceivedTime] &gt;= '" + DateTime.Today.ToString("MM") + "/01/" + DateTime.Today.ToString("yyyy") + " 00:00AM'"</CSharpValue>
         </InArgument>
       </ui:GetOutlookMailMessages.Filter>
+      <ui:GetOutlookMailMessages.MailFolder>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">in_Config["folder"].ToString()</CSharpValue>
+        </InArgument>
+      </ui:GetOutlookMailMessages.MailFolder>
       <ui:GetOutlookMailMessages.Messages>
         <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">
           <CSharpReference x:TypeArguments="scg:List(snm:MailMessage)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">messages</CSharpReference>
         </OutArgument>
       </ui:GetOutlookMailMessages.Messages>
     </ui:GetOutlookMailMessages>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xA;int pos1 = 0;&#xA;int pos2 = 0;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xA;    if (body[i] == '&gt;') {&#xA;        pos2 = i;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xA;    }&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="638,61" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xA;int pos1 = 0;&#xA;int pos2 = 0;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xA;    if (body[i] == '&gt;') {&#xA;        pos2 = i;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xA;    }&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="580,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="body">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">messages[0].Body</CSharpValue>
@@ -158,38 +176,38 @@
       </ui:InvokeCode.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeCode>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="638,2765" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="580,1417" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="link" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="602,2631" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="544,1283" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="540,101" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="482,101" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">link</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="540,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
+            <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="482,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
               <ui:GetEnvironmentFolder.FolderPath>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">userProfile</CSharpReference>
                 </OutArgument>
               </ui:GetEnvironmentFolder.FolderPath>
             </ui:GetEnvironmentFolder>
-            <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="540,1409" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
+            <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="482,61" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction>
                   <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1144" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -305,12 +323,12 @@
               </ui:GetLastDownloadedFile.File>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetLastDownloadedFile>
-            <If sap:VirtualizedContainerService.HintSize="540,418" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap:VirtualizedContainerService.HintSize="482,418" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">targetAppears</CSharpValue>
@@ -340,7 +358,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="540,142" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="w" KeyModifiers="Ctrl">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="False" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="482,142" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="w" KeyModifiers="Ctrl">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9087da7c-41d3-4f1f-b725-9120a221a942">
                   <ui:Target.TimeoutMS>
@@ -352,7 +370,7 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="540,168" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True">
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="482,168" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True">
               <ui:MoveFile.Destination>
                 <InArgument x:TypeArguments="x:String">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">in_sophuPath</CSharpValue>
