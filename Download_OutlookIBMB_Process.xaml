@@ -5,7 +5,7 @@
     <x:Property Name="in_MaThePath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1154,4063</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>950,3869</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -117,7 +117,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_OutlookIBMB_Process" sap:VirtualizedContainerService.HintSize="942,3998" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_OutlookIBMB_Process" sap:VirtualizedContainerService.HintSize="938,3804" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="links" />
@@ -128,14 +128,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="880,101" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="876,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"Get mail IBMB starting..."</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="880,32" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="50">
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="876,25" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MarkAsRead="False" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="50">
       <ui:GetOutlookMailMessages.Account>
         <InArgument x:TypeArguments="x:String">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">in_Config["mail"].ToString()</CSharpValue>
@@ -157,26 +157,26 @@
         </OutArgument>
       </ui:GetOutlookMailMessages.Messages>
     </ui:GetOutlookMailMessages>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="880,3522" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="876,3355" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="844,3388" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="840,3229" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="782,101" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="778,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">mail.Subject</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
-            <If sap:VirtualizedContainerService.HintSize="782,3125" sap2010:WorkflowViewState.IdRef="If_4">
+            <If sap:VirtualizedContainerService.HintSize="778,2986" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">mail.Attachments.Any()</CSharpValue>
@@ -189,13 +189,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence sap:VirtualizedContainerService.HintSize="400,199" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" OverwriteExisting="True">
+                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="338,88" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" OverwriteExisting="True">
                     <ui:SaveMailAttachments.FolderPath>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">in_MaThePath</CSharpValue>
@@ -210,13 +210,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="700,2743" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence sap:VirtualizedContainerService.HintSize="700,2611" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xA;int pos1 = 0;&#xA;int pos2 = 0;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xA;    if (body[i] == '&gt;') {&#xA;        pos2 = i;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xA;    }&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="638,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="links = new List&lt;String&gt;();&#xA;int pos1 = 0;&#xA;int pos2 = 0;&#xA;for (int i = 0; i &lt; body.Length; i++) {&#xA;    if (body[i] == '&lt;') pos1 = i + 1;&#xA;    if (body[i] == '&gt;') {&#xA;        pos2 = i;&#xA;&#x9;&#x9;links.Add(body.Substring(pos1,pos2 - pos1));&#xA;    }&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="638,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
                     <ui:InvokeCode.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="body">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">mail.Body</CSharpValue>
@@ -232,13 +232,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeCode>
-                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="638,2407" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
+                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="638,2295" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:String">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:String" Name="link" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="602,2274" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="602,2171" sap2010:WorkflowViewState.IdRef="Sequence_10">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="userProfile" />
                             <Variable x:TypeArguments="si:FileInfo" Name="downloadedFile" />
@@ -248,46 +248,46 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="540,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="540,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
                             <ui:LogMessage.Message>
                               <InArgument x:TypeArguments="x:Object">
                                 <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">link</CSharpValue>
                               </InArgument>
                             </ui:LogMessage.Message>
                           </ui:LogMessage>
-                          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="540,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
+                          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="540,62" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
                             <ui:GetEnvironmentFolder.FolderPath>
                               <OutArgument x:TypeArguments="x:String">
                                 <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">userProfile</CSharpReference>
                               </OutArgument>
                             </ui:GetEnvironmentFolder.FolderPath>
                           </ui:GetEnvironmentFolder>
-                          <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="540,1409" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
+                          <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="540,1335" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp">
                             <ui:GetLastDownloadedFile.Body>
                               <ActivityAction>
-                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1144" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1079" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="444,516" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V2" WindowResize="Maximize">
+                                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="444,489" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V2" WindowResize="Maximize">
                                     <uix:NApplicationCard.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                         </ActivityAction.Argument>
-                                        <Sequence DisplayName="Download file" sap:VirtualizedContainerService.HintSize="400,290" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                        <Sequence DisplayName="Download file" sap:VirtualizedContainerService.HintSize="400,272" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <uix:NClick ClickType="Single" DelayBefore="2" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V3">
+                                          <uix:NClick ClickType="Single" DelayBefore="2" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6ea9b4bc-26ff-4ba0-9cb3-7ddd8c65f08f" Version="V3">
                                             <uix:NClick.Target>
                                               <uix:TargetAnchorable Accuracy="0.93" BrowserURL="https://drive.google.com/file/d/1S4RvtW3tfeIP27VwfNBbQo2DL6m7_WDE/view" DesignTimeRectangle="1722, 97, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='18' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='ndfHFb-c4YZDc-Bz112c ndfHFb-c4YZDc-C7uZwb-LgbsSe-Bz112c ndfHFb-c4YZDc-nupQLb-Bz112c' tag='DIV' aaname='' /&gt;" Guid="0d9959cb-d880-4fce-8f56-8e40c11c0921" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVEhL7ZSBCYAwDASdqTt1ju7U7tQFOoDyYkTlYxtREenDQTQkJ0U6OOfGN+nC2+lCioT1anQhRcJ6Nb4r9N6vtYT1ajQJU0qzIIQwP0tQ4x0SY9zNaDQJZSmi1fgoNnuk+Ui3y49plQHTT8OkFhkwCcGVY9yiCiWsB6kmk7AeuCQ8Q8J64DvCUsoyak/Ome4EqhC3BwatwczZzaMKn6ILb+fvQjdOOs2jQLfMwssAAAAASUVORK5CYII=" InformativeScreenshot="82b138f4178a514a371d6afa052fcb79.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='12410000228406 (0111-0611).xlsx - Google Drive' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                                 <uix:TargetAnchorable.Anchors>
-                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                                     <uix:Target Accuracy="0.92" DesignTimeRectangle="1674, 97, 24, 24" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='17' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='ndfHFb-c4YZDc-Bz112c ndfHFb-c4YZDc-C7uZwb-LgbsSe-Bz112c ndfHFb-c4YZDc-PEFSMe-Bz112c' tag='DIV' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACbSURBVEhL7Y8xCgQhDEX3TFZex84DeAYrKy/skAWXzDcDOgQ3hcUrxOQ98nHOtZ2coDr2grXWJSQHx25Q+uOcYGcIeu9bjLHlnH+SVWg3hHDzdoYgxSTJG8iF/iFYShGXZ0gpfelvuhT9Q5ALVpEc3E2oBvFCAv2qQQn02w3iHCLtEDj3/yDytIjMztkNziI5OPaC2pygOpuDrl3BH9U7+fTNeQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                                                   </scg:List>
                                                 </uix:TargetAnchorable.Anchors>
@@ -313,20 +313,20 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </uix:NApplicationCard>
-                                  <uix:NCheckState DisplayName="Check App State 'Vẫn tải xuống'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="444,466" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30" Version="V3">
+                                  <uix:NCheckState DisplayName="Check App State 'Download anyway'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="444,439" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30" Version="V3">
                                     <uix:NCheckState.Exists>
                                       <OutArgument x:TypeArguments="x:Boolean">
                                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">targetAppears</CSharpReference>
                                       </OutArgument>
                                     </uix:NCheckState.Exists>
                                     <uix:NCheckState.IfExists>
-                                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,240" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,222" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'INPUT  uc-download-link'" sap:VirtualizedContainerService.HintSize="338,116" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'INPUT  uc-download-link'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -338,7 +338,7 @@
                                             </ui:CursorPosition>
                                           </ui:Click.CursorPosition>
                                           <ui:Click.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c07ba7d7-666e-4e52-b2bc-11d7c341df1e" InformativeScreenshot="ba0113bd69949b0eca20941a41da1ee5" Selector="&lt;html app='msedge.exe' title='Google Drive – Cảnh báo quét vi rút' /&gt;&lt;webctrl id='uc-download-link' tag='INPUT' /&gt;">
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c07ba7d7-666e-4e52-b2bc-11d7c341df1e" InformativeScreenshot="ba0113bd69949b0eca20941a41da1ee5" Selector="&lt;html app='msedge.exe' title='Google Drive*' /&gt;&lt;webctrl id='uc-download-link' tag='INPUT' /&gt;">
                                               <ui:Target.TimeoutMS>
                                                 <InArgument x:TypeArguments="x:Int32" />
                                               </ui:Target.TimeoutMS>
@@ -360,7 +360,7 @@
                                       </Sequence>
                                     </uix:NCheckState.IfNotExists>
                                     <uix:NCheckState.Target>
-                                      <uix:TargetAnchorable BrowserURL="https://drive.google.com/u/0/uc?id=1S4RvtW3tfeIP27VwfNBbQo2DL6m7_WDE&amp;export=download" DesignTimeRectangle="722, 233, 98, 21" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Vẫn tải xuống'" FullSelectorArgument="&lt;webctrl id='uc-download-link' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='uc-download-link' tag='INPUT' type='submit' class='goog-inline-block jfk-button jfk-button-action' aaname='Vẫn tải xuống' check:text='Vẫn tải xuống' /&gt;" Guid="c685db75-b294-4f38-a100-2993db32bf7d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGYAAAAZCAYAAADDq1t2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJpSURBVGhD7VnNzYMwDM2CSJ2mB8QaPdFJQB2jBybosSPki/OHbRJSIFDUL5GeBDhx7PfsgISQZZxyFGFOOrwwr9dL3m43eb1eCw4G8A784+GFAePj8ZDv97vgYADvwD8eXhhQLrTo36NvpBCVbJ8BW0YA/3jsIkxXC58MXFf3ITjv/BhkexGy6UO2vDhAmE42opGdTeqIavsFrBTGknxp5cBtz1ZWglWVfRacvxpOaIW6mzzfpSt3ySOM1R0z3CtFCnRC+rk5vrpNhOnjkAgAgG7kRO0nTI48PsVqYYKdESRlkAM6uoZnTmGORJ48PsV6YawIhCwtFnuH6K8YNc/Ci2bnNjV0mLVHiDddyOa4Y2WyNt4xWlzczfgLS18j2yQX250WuCBN0TTIzjjAsV7UvA86boMw02NL35NjBZJBQeLkXbCM6NgXD+0YQ76fS0icP8pGP4Zo72NWGOYTC+p88nvPQ2jtzsIsIQRAhCRrAYwoBioMAyEqFQeqfOxvTphJrHQPHhsp0MTaGLYJgzeZBDDaTXureZd8wpgqtVB+R1/pxHmna8wJw21LhEmsjWGjMGMQHQ7GgQeF77cIw9eS+0Tidm4FBfO7HaOgN1aBKUw208lSwvIJM8413UP3CSeObWw/5tN0VcQnySshTHBtLL4R24XxhGOSuc3aeyTGQmFcQi5hI4ZB0+O1jAgPGwvu6hDB1md1b5XPaXzjnu55ShgFVLyibiPxUWQQpmAZTIFEC9CiCLM7oNNQ57EujaEIcwDM+yp8DMZQhDkposKUP5jfw+wfzPLP/3sA3qP//Ms41yjCnHJI+Qf3NoyRTRi7rwAAAABJRU5ErkJggg==" InformativeScreenshot="80ef375332029546c3594b2dde3e03ad.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google Drive – Cảnh báo quét vi rút' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                                      <uix:TargetAnchorable BrowserURL="https://drive.google.com/uc?id=1Z7kWVc9SvvtfnHAmz2ei8ACx9JzGdvh7&amp;export=download" DesignTimeRectangle="722, 233, 124, 21" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Download anyway'" FullSelectorArgument="&lt;html app='msedge.exe' title='Google Drive*' /&gt;&lt;webctrl id='uc-download-link' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='uc-download-link' tag='INPUT' type='submit' class='goog-inline-block jfk-button jfk-button-action' aaname='Download anyway' check:text='Download anyway' /&gt;" Guid="9ca57146-f83a-4c1a-b234-12ee46704ccc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIAAAAAZCAYAAAD5VyZAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMBSURBVGhD7VrLbcMwDM2CBjJND4HXyCmdJEHG6CET5NgRVD5KlEmado3a6SGWgIdYlvh7fFIuPqQ2dj2aAHY+qgCez2c6n8/p4+Oj4Y2BHqPXMqoAsHC/39P393fDGwM9Rq9lVAFAHZFBw/sBvZbRBLBDNAHsHH8TwNcldYdDOnicrvH+V4Hz6NLlK1hbhWvqqZ7+Fq29F1YIwBOfSftXETQBrMaGAph5/yo0AazGtgIIiHt8dsNfxPGSHnWfsvf+eN6nKz1fT7hV+ny7MH6zC/YxHulylDUg+6/rt35YK/EmBaD3ErrPR1nLMTqyH/IocVRNei9iMEfq5sw123mNYWpU+5BT5RdwHE9gYwEUAiRZJkqKLg0oCeuiQEB3JKi53qebyXMp1ORhxZeFNxBuSXZ5hrZTAnDERjWGNefn6lMLwoiD/IMLPa/xIh+6fpeXEUSMlwrAK1mTZZtMvm7kMyDK+2C7SACmEYBtqkVei4U6rMe2FlZotn5A569r1s+meaiJ3jMnUtdUIznvoQ+IpbnXeUxhYwFo4sZkGKLZB55hE/1mm6UCMO8ZOhcCxyZfDNw4Q25jW3fSDPKa+MLNtVQAQ835vfYvDUMu0a/xJ3XwTaH6UMWCPKL+jLGtAAJF6uYZAUiS9eRjP80/aY+y8T5Ms3QexjcwJ0Y3n7V18HtHNc0IoKz3Nyvy6of21ZOP2k6XzJHw7Hkf9QF+aQ5OjaCnsaEAMmnzDbfrrHqouBDGaqe5PxmLBOCaxvumYnNeulHZ1gpiTgASs/hdLADJi975BpVauqP4opzAjd7He4a82LfrQ35nY85hhQBKIAVduKAWDPiiPdFGMBnLBSBzyccJtMRikD/v19hSE3o+qcq+QpoOUAycthrrdwFInDFXxW/laOwLqA0m5JvE5Tkn3gB/E0DDCqBpTpxbggVmD9EcmgD+Gzih/ibcEHxDLrz+gSaAf0S+vl91+uWvafnpB5oAdo5QAO2LoH1g8oug9k3gPoAeh98EtrHP0QSw65HSD1MFZNoalOjlAAAAAElFTkSuQmCC" InformativeScreenshot="301c99bf3961d9745b7dd846fc945d98.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google Drive *' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
                                     </uix:NCheckState.Target>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
