@@ -349,21 +349,27 @@
                                         <av:PointCollection x:Key="ConnectorLocation">200,655.5 250,655.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Download_OutlookSoPhu_Process.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Download_OutlookSoPhu_Process.xaml">
-                                      <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_sophuPath">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">path + "SoPhu\\"</CSharpValue>
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                          <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">Config</CSharpValue>
-                                        </InArgument>
-                                      </ui:InvokeWorkflowFile.Arguments>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </ui:InvokeWorkflowFile>
+                                    <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Download_OutlookSoPhu_Process.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Download_OutlookSoPhu_Process.xaml">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_sophuPath">
+                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">path + "SoPhu\\"</CSharpValue>
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                                <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">Config</CSharpValue>
+                                              </InArgument>
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:InvokeWorkflowFile>
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                    </ui:CommentOut>
                                     <FlowStep.Next>
                                       <FlowStep x:Name="__ReferenceID6">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -373,24 +379,30 @@
                                             <av:PointCollection x:Key="ConnectorLocation">450,655.5 500,655.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Download_OutlookIBMB_Process.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Download_OutlookIBMB_Process.xaml">
-                                          <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_ibmbPath">
-                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">path+"\\IBMB"</CSharpValue>
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                              <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">Config</CSharpValue>
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_MaThePath">
-                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">path+"\\MaThe"</CSharpValue>
-                                            </InArgument>
-                                          </ui:InvokeWorkflowFile.Arguments>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </ui:InvokeWorkflowFile>
+                                        <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Download_OutlookIBMB_Process.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Download_OutlookIBMB_Process.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_ibmbPath">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">path+"\\IBMB"</CSharpValue>
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                                    <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">Config</CSharpValue>
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_MaThePath">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">path+"\\MaThe"</CSharpValue>
+                                                  </InArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:InvokeWorkflowFile>
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                        </ui:CommentOut>
                                         <FlowStep.Next>
                                           <FlowStep x:Name="__ReferenceID8">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -444,7 +456,7 @@
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">405,356.5</av:Point>
                             <av:Size x:Key="ShapeSize">70,87</av:Size>
-                            <av:PointCollection x:Key="Đối chiếu excelConnector">440,443.5 440,499.49999999999994</av:PointCollection>
+                            <av:PointCollection x:Key="Đối chiếu excelConnector">457.5,443.5 457.5,473.5 440,473.5 440,499.49999999999994</av:PointCollection>
                             <av:PointCollection x:Key="Default">405,400 100,400 100,429.5</av:PointCollection>
                             <x:String x:Key="DefaultCaseDisplayName">Tải các file dữ liệu</x:String>
                           </scg:Dictionary>
@@ -454,7 +466,7 @@
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">340,499.49999999999994</av:Point>
                               <av:Size x:Key="ShapeSize">200,52</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">540,525.5 570,525.5 570,469.49999999999994 490,469.49999999999994 490,435.5 520,435.5</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">540,525.5 620,525.5 620,461.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Processes\\FilesProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Processes\\FilesProcess.xaml">
