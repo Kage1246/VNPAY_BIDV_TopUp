@@ -1,5 +1,6 @@
 {
   "name": "VNPAY_BIDV_TopUp",
+  "projectId": "5aacd4f0-112a-408e-b43c-914168024f36",
   "description": "VNPAY BIDV TopUp",
   "main": "Main.xaml",
   "dependencies": {
