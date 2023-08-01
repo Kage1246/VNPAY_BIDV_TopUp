@@ -208,11 +208,17 @@
                         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_sophu">
                           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">Ibmb_SoPhu</CSharpValue>
                         </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_FolderMaThe">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">FolderMaThe</CSharpValue>
+                        </InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_FolderFinalMaThe">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">FolderFinalMaThe</CSharpValue>
                         </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_FolderMaThe">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">FolderMaThe</CSharpValue>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_month">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">in_month</CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_year">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">in_year</CSharpValue>
                         </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
@@ -336,11 +342,17 @@
                         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_sophu">
                           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">Ibmb_SoPhu</CSharpValue>
                         </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_FolderMaThe">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">FolderMaThe</CSharpValue>
+                        </InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_FolderFinalMaThe">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">FolderFinalMaThe</CSharpValue>
                         </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_FolderMaThe">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">FolderMaThe</CSharpValue>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_month">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">in_month</CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_year">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">in_year</CSharpValue>
                         </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
